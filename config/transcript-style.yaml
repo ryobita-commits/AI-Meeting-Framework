@@ -1,0 +1,96 @@
+version: 1
+
+transcript_style:
+  default:
+    表示順:
+      - "moderator"
+      - "human"
+      - "analyst"
+      - "advocate"
+      - "critic"
+      - "moderator"
+    見出し形式: "speaker_name_bold"
+    発言区切り: "blank_line"
+    human_label: "Human"
+    moderator_label: "Moderator"
+    include_sections:
+      - "meeting_info"
+      - "transcript"
+      - "tentative_conclusion"
+      - "next_actions"
+    tone:
+      readability: "high"
+      drama: "medium"
+      compression: "medium"
+
+  lively:
+    表示順:
+      - "moderator"
+      - "human"
+      - "analyst"
+      - "advocate"
+      - "critic"
+      - "human"
+      - "moderator"
+    見出し形式: "speaker_name_bold"
+    発言区切り: "blank_line"
+    human_label: "Human"
+    moderator_label: "Moderator"
+    include_sections:
+      - "meeting_info"
+      - "transcript"
+      - "tentative_conclusion"
+      - "next_actions"
+    tone:
+      readability: "high"
+      drama: "high"
+      compression: "low"
+
+  character:
+    表示順:
+      - "moderator"
+      - "human"
+      - "analyst"
+      - "advocate"
+      - "critic"
+      - "human"
+      - "moderator"
+    見出し形式: "character_name_with_role"
+    発言区切り: "blank_line"
+    human_label: "あなた"
+    moderator_label: "司会"
+    include_sections:
+      - "meeting_info"
+      - "transcript"
+      - "tentative_conclusion"
+      - "next_actions"
+    tone:
+      readability: "high"
+      drama: "medium"
+      compression: "medium"
+      character_expression: "high"
+
+  teaching:
+    表示順:
+      - "moderator"
+      - "human"
+      - "julian"
+      - "yang"
+      - "julian"
+      - "yang"
+      - "moderator"
+    見出し形式: "character_name_only"
+    発言区切り: "blank_line"
+    human_label: "あなた"
+    moderator_label: "司会"
+    include_sections:
+      - "meeting_info"
+      - "transcript"
+      - "tentative_conclusion"
+      - "next_actions"
+    tone:
+      readability: "high"
+      drama: "medium"
+      compression: "medium"
+      character_expression: "high"
+      teaching_feel: "high"

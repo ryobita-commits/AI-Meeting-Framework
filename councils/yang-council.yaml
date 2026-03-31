@@ -1,0 +1,39 @@
+version: 1
+
+council:
+  名前: "yang-council"
+  モード: "Human-in-the-Loop"
+  説明: "ヤンが本質と長期視点を語り、ユリアンが読者の代わりに質問して理解を助ける会議構成。"
+
+  参加者:
+    moderator:
+      participant_id: "moderator"
+    members:
+      - participant_id: "yang"
+      - participant_id: "julian"
+    optional:
+      - participant_id: "critic"
+      - participant_id: "analyst"
+    human:
+      participant_id: "human"
+
+  最終判断者: "human"
+
+  出力:
+    transcript: true
+    meeting_note: true
+    decision_memo: true
+    action_list: true
+
+  既定ルール:
+    - "moderator が問いを定義する"
+    - "human が前提や気になる点を出す"
+    - "ヤンが本質、長期影響、失敗条件を語る"
+    - "ユリアンが読者の代わりに質問し、理解しやすくする"
+    - "必要なら critic と analyst が補足する"
+    - "moderator が結論と次アクションをまとめる"
+
+  向いている場面:
+    - "難しい話をわかりやすく伝えたい時"
+    - "教え諭すような会話形式にしたい時"
+    - "読者代理の質問を入れたい時"

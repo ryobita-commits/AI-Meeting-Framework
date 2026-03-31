@@ -1,0 +1,56 @@
+version: 1
+
+meeting_modes:
+  AI-Only:
+    説明: "人間が会議に直接参加せず、AI が論点整理と推奨案作成まで進める"
+    final_decider: "moderator_or_hold"
+    human_input: false
+    allowed_outputs:
+      - "transcript"
+      - "meeting_note"
+      - "decision_draft"
+      - "option_comparison"
+    must_escalate_when:
+      - "予算が絡む"
+      - "法務が絡む"
+      - "責任所在が絡む"
+      - "公開可否を決める"
+
+  Human-in-the-Loop:
+    説明: "人間が目的と制約を与え、AI が比較と整理を担当する"
+    final_decider: "human"
+    human_input: true
+    allowed_outputs:
+      - "transcript"
+      - "meeting_note"
+      - "decision_memo"
+      - "action_list"
+
+  Council Mode:
+    説明: "複数 AI の立場差を明示し、1つの会議として見える形で議論する"
+    final_decider: "configurable"
+    human_input: "optional"
+    allowed_outputs:
+      - "transcript"
+      - "meeting_note"
+      - "decision_memo"
+      - "action_list"
+      - "option_comparison"
+
+  Live Council Mode:
+    説明: "複数 AI と人間が、1つのチャット内でリアルタイムにやり取りしているように見せる"
+    final_decider: "configurable"
+    human_input: true
+    allowed_outputs:
+      - "live_transcript"
+      - "meeting_note"
+      - "decision_memo"
+      - "action_list"
+    round_based: true
+    default_rounds: 3
+    min_rounds: 2
+    max_rounds: 7
+    human_interrupt_points:
+      - "after_round_0"
+      - "after_round_1"
+      - "before_final_decision"

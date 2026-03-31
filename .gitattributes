@@ -1,0 +1,17 @@
+# Normalize line endings in Git and keep text files as LF.
+* text=auto eol=lf
+
+# Core text assets in this repository should be UTF-8 text.
+*.md text eol=lf
+*.txt text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.ps1 text eol=lf
+*.sh text eol=lf
+*.gitignore text eol=lf
+*.gitattributes text eol=lf
+*.editorconfig text eol=lf
+

@@ -1,0 +1,37 @@
+version: 1
+
+council:
+  名前: "live-default-council"
+  モード: "Live Council Mode"
+  説明: "複数 AI と人間がリアルタイムに会話しているように見せる標準構成。"
+
+  参加者:
+    moderator:
+      participant_id: "moderator"
+    members:
+      - participant_id: "analyst"
+      - participant_id: "advocate"
+      - participant_id: "critic"
+    human:
+      participant_id: "human"
+
+  最終判断者: "human"
+
+  出力:
+    live_transcript: true
+    summary: true
+    meeting_note: true
+    decision_memo: true
+    action_list: true
+
+  発言ルール:
+    既定ラウンド数: 3
+    最大ラウンド数: 5
+    1発言の目安: "短め"
+    human割り込みポイント:
+      - "round_0_end"
+      - "round_1_end"
+      - "round_2_before_decision"
+    moderator整理ポイント:
+      - "round_1_end"
+      - "round_2_end"

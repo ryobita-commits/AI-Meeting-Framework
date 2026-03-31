@@ -1,0 +1,41 @@
+version: 1
+
+council:
+  名前: "default-council"
+  モード: "Human-in-the-Loop"
+  説明: "標準的な会議構成。moderator, critic, advocate, analyst, human で構成する。"
+
+  参加者:
+    moderator:
+      participant_id: "moderator"
+    members:
+      - participant_id: "critic"
+      - participant_id: "advocate"
+      - participant_id: "analyst"
+    optional:
+      - participant_id: "realist"
+      - participant_id: "creative"
+    human:
+      participant_id: "human"
+
+  最終判断者: "human"
+
+  出力:
+    transcript: true
+    meeting_note: true
+    decision_memo: true
+    action_list: true
+
+  既定ルール:
+    - "最初に判断したい問いを明確にする"
+    - "analyst が前提整理を行う"
+    - "advocate が前向きな案を出す"
+    - "critic が懸念点を出す"
+    - "human が制約と優先順位を補足する"
+    - "moderator が結論と次アクションをまとめる"
+
+  人間参加が必須になる条件:
+    - "予算が絡む"
+    - "対外公開が絡む"
+    - "法務や責任が絡む"
+    - "高リスク案を採用する"
