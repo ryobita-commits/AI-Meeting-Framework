@@ -28,6 +28,8 @@
 4. [councils/default-council.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\councils\default-council.yaml) か [councils/yang-council.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\councils\yang-council.yaml) を選ぶ
 5. [templates/agenda.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\agenda.md) から会議を始める
 
+普通のチャットでまず試すなら [CHAT_QUICKSTART.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\CHAT_QUICKSTART.md) から入るのがおすすめです。
+
 ## 会議モード
 
 | モード | 向いている場面 | 最終判断 | 主な出力 |
@@ -65,6 +67,8 @@
 - 論説、批評
 - エッセイ
 - 読み手が騙されやすい文章の検証
+
+Gemini などの一般的なチャットで使うときは [CHAT_QUICKSTART.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\CHAT_QUICKSTART.md) を使うと、そのまま始めやすいです。
 
 ## 既定の参加者
 
@@ -121,6 +125,7 @@
 - [templates/report.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\report.md)
 - [samples/README.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\samples\README.md)
 - [CHANGELOG.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\CHANGELOG.md)
+- [CHAT_QUICKSTART.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\CHAT_QUICKSTART.md)
 
 ## ディレクトリ構成
 
