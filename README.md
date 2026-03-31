@@ -2,66 +2,69 @@
 
 複数 AI と人間が、1つの会議として見える形で議論、整理、判断、記録を行うための framework です。
 
-## 目的
+内部では役割分担して考えつつ、外部には読みやすい会議ログ、要約、報告書として見せることを目的にしています。
 
-この framework は、内部では複数 AI が役割分担して考えつつ、外部には 1 本の会議ログとして分かりやすく見せることを目的とします。
+## できること
+
+- 複数 AI の役割分担による会議
+- 人間参加あり、なしの切り替え
+- 会議ログを `transcript`、`summary`、`report` に分けて出力
+- `character` モードによるキャラ性のある会話表示
+- `teaching` モードによる分かりやすい読解支援
+- 会議テーマごとの bootstrap とテンプレート運用
 
 ## 中核コンセプト
 
 - framework 名: `AI-Meeting-Framework`
-- 会議モード名: `Council Mode`
+- 中核モード名: `Council Mode`
 
 `Council Mode` は、複数 AI が立場と性格を持って議論し、moderator が結論をまとめる会議モードです。
 
-## この framework でできること
+## 最短の始め方
 
-- AI メンバーを追加、削除できる
-- AI ごとに性格、口調、重視する価値を設定できる
-- `AI-Only` と `Human-in-the-Loop` を切り替えられる
-- 内部では分業しつつ、外部には 1 つの会議ログとして表示できる
-- 会議の結果を `transcript`, `meeting note`, `decision memo`, `action list` として残せる
-
-## 最初に見るファイル
-
-- `README.md`
-- `MEETING_MODES.md`
-- `COUNCIL_MODE.md`
-- `LIVE_COUNCIL_MODE.md`
-- `config/personas.yaml`
-- `config/participants.yaml`
-- `config/transcript-style.yaml`
-- `councils/default-council.yaml`
-- `councils/live-default-council.yaml`
-- `templates/agenda.md`
-- `templates/transcript.md`
-- `templates/live-transcript.md`
-- `templates/character-live-transcript.md`
-- `templates/teaching-transcript.md`
-- `templates/meeting-note.md`
-- `templates/action-list.md`
-- `templates/summary.md`
-- `templates/live-summary.md`
-- `templates/report.md`
-
-## ディレクトリ構成
-
-- `config/`: 会議モード、参加者、ペルソナ、表示ルール
-- `councils/`: 会議ごとの標準構成
-- `templates/`: agenda、transcript、meeting note、decision memo、action list などのテンプレート
-- `samples/`: 会議サンプル
-- `sessions/`: 実際の会議で作られる成果物
-  - `summaries/`: 人が最初に読む短い要約
-  - `reports/`: 会議全体の流れと結論を読む報告書
-- `bootstrap/`: 会議を始めるための初期質問と起動テンプレート
+1. [MEETING_MODES.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\MEETING_MODES.md) を読む
+2. [config/personas.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\config\personas.yaml) で性格設定を見る
+3. [config/participants.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\config\participants.yaml) で参加者構成を見る
+4. [councils/default-council.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\councils\default-council.yaml) か [councils/yang-council.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\councils\yang-council.yaml) を選ぶ
+5. [templates/agenda.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\agenda.md) から会議を始める
 
 ## 会議モード
 
 | モード | 向いている場面 | 最終判断 | 主な出力 |
 | --- | --- | --- | --- |
-| `AI-Only` | 事前整理、論点洗い出し、比較表作成、たたき台作成 | `moderator` または保留 | transcript、option comparison、draft decision |
+| `AI-Only` | 事前整理、論点洗い出し、比較表作成、たたき台作成 | `moderator` または保留 | transcript、draft decision |
 | `Human-in-the-Loop` | 目的確定、優先順位付け、高リスク判断、最終承認 | human | transcript、meeting note、decision memo |
-| `Council Mode` | 複数 AI の立場差を明示し、会議として見せたい時 | human または設定次第 | transcript、meeting note、decision memo、action list |
+| `Council Mode` | 複数 AI の立場差を見せながら会議を進めたい時 | human または設定次第 | transcript、meeting note、decision memo、action list |
 | `Live Council Mode` | リアルタイム風に会話を見せたい時、雑談会議、エンタメ性を重視する時 | human または設定次第 | live transcript、summary、meeting note、decision memo、action list |
+
+## 表示スタイル
+
+- `default`
+  - 実務向けで簡潔
+- `lively`
+  - 少し会議感を強める
+- `character`
+  - キャラ名と役割を前面に出す
+- `teaching`
+  - ヤンとユリアンのように、教え諭す会話として見せる
+
+## teaching モード
+
+`teaching` は、記事やエッセイを「分かりやすく、誤読しにくく読む」ためのモードです。
+
+- 基本ガイド: [TEACHING_MODE.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\TEACHING_MODE.md)
+- teaching 入口: [TEACHING_SAMPLES.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\TEACHING_SAMPLES.md)
+- ニュース、解説記事向け: [article-reading-teaching.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\article-reading-teaching.md)
+- インタビュー記事向け: [interview-reading-teaching.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\interview-reading-teaching.md)
+- エッセイ、論説向け: [essay-reading-teaching.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\essay-reading-teaching.md)
+
+向いている用途:
+
+- ニュース記事
+- インタビュー記事
+- 論説、批評
+- エッセイ
+- 読み手が騙されやすい文章の検証
 
 ## 既定の参加者
 
@@ -81,40 +84,20 @@
 - `yang`
 - `julian`
 
-## 性格設定の考え方
-
-性格は固定パラメーターだけではなく、日本語や文章でも指定できる前提です。
-
-たとえば次のように定義できます。
-
-- どんな性格か
-- どういう口調か
-- 何を重視するか
-- 何を嫌うか
-- 必ずやること
-- やってはいけないこと
-
 ## キャラクター性のある構成
 
 役割名だけでなく、キャラクター性を持った参加者も追加できます。
 
-- `yang`: 長期視点と歴史観を持つ教え諭す役
-- `julian`: 読者の代わりに質問する役
+- `yang`
+  - 長期視点と歴史観を持つ教え諭す役
+- `julian`
+  - 読者の代わりに質問する役
 
-専用構成は [councils/yang-council.yaml](councils/yang-council.yaml) に定義できます。
-
-## transcript の見せ方
-
-表示スタイルは複数持てます。
-
-- `default`: 実務向けで無難
-- `lively`: 少し会議感を強める
-- `character`: キャラ名と役割を前面に出す
-- `teaching`: ヤンとユリアンのように、教え諭す会話として見せる
+専用構成は [councils/yang-council.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\councils\yang-council.yaml) にあります。
 
 ## 人が最初に読む資料
 
-会議結果は、次の順で読む前提が分かりやすいです。
+会議結果は、次の順で読むのが分かりやすいです。
 
 1. `sessions/summaries/`
 2. `sessions/reports/`
@@ -122,9 +105,53 @@
 
 短く把握したい時は `summary`、流れごと理解したい時は `report`、発言を追いたい時は `transcript` を読みます。
 
-## 次にやること
+## 主要ファイル
 
-1. `config/personas.yaml` で性格を定義する
-2. `config/participants.yaml` で参加者を定義する
-3. `councils/default-council.yaml` で標準会議構成を決める
-4. `templates/transcript.md` に沿って会議ログを出す
+- [MEETING_MODES.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\MEETING_MODES.md)
+- [COUNCIL_MODE.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\COUNCIL_MODE.md)
+- [LIVE_COUNCIL_MODE.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\LIVE_COUNCIL_MODE.md)
+- [config/personas.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\config\personas.yaml)
+- [config/participants.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\config\participants.yaml)
+- [config/transcript-style.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\config\transcript-style.yaml)
+- [templates/agenda.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\agenda.md)
+- [templates/transcript.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\transcript.md)
+- [templates/character-live-transcript.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\character-live-transcript.md)
+- [templates/teaching-transcript.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\teaching-transcript.md)
+- [templates/summary.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\summary.md)
+- [templates/report.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\report.md)
+- [samples/README.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\samples\README.md)
+- [CHANGELOG.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\CHANGELOG.md)
+
+## ディレクトリ構成
+
+- `bootstrap/`
+  - 会議を始めるための初期質問と起動テンプレート
+- `config/`
+  - 会議モード、参加者、ペルソナ、表示ルール
+- `councils/`
+  - 会議ごとの標準構成
+- `templates/`
+  - agenda、transcript、meeting note、decision memo、action list などのテンプレート
+- `samples/`
+  - 会議サンプル
+- `sessions/`
+  - 実際の会議で作られる成果物
+- `scripts/`
+  - 補助スクリプト
+
+## 文字コードと保存ルール
+
+テキストファイルは原則として次で統一します。
+
+- 文字コード: UTF-8
+- BOM: なし
+- 改行: LF
+
+詳細は [ENCODING_RULES.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\ENCODING_RULES.md) を参照してください。  
+UTF-8 確認は [scripts/check_utf8.py](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\scripts\check_utf8.py) で行えます。
+
+## リポジトリ運用
+
+- GitHub テンプレートまたは複製元として使えます
+- 初期安定版は `v1.0.0`
+- 今後の変更は改善提案ベースで小さく積み上げます
