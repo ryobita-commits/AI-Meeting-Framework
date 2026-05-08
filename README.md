@@ -11,6 +11,7 @@
 - 会議ログを `transcript`、`summary`、`report` に分けて出力
 - `character` モードによるキャラ性のある会話表示
 - `teaching` モードによる分かりやすい読解支援
+- `Debate Council Mode` による相互反論と立場修正
 - 会議テーマごとの bootstrap とテンプレート運用
 
 ## 中核コンセプト
@@ -38,6 +39,7 @@
 | `Human-in-the-Loop` | 目的確定、優先順位付け、高リスク判断、最終承認 | human | transcript、meeting note、decision memo |
 | `Council Mode` | 複数 AI の立場差を見せながら会議を進めたい時 | human または設定次第 | transcript、meeting note、decision memo、action list |
 | `Live Council Mode` | リアルタイム風に会話を見せたい時、雑談会議、エンタメ性を重視する時 | human または設定次第 | live transcript、summary、meeting note、decision memo、action list |
+| `Debate Council Mode` | AI同士が反論、再反論、立場修正を行う議論をしたい時 | human または設定次第 | debate transcript、summary、report、decision memo |
 
 ## 表示スタイル
 
@@ -114,6 +116,7 @@ Gemini などの一般的なチャットで使うときは [CHAT_QUICKSTART.md](
 - [MEETING_MODES.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\MEETING_MODES.md)
 - [COUNCIL_MODE.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\COUNCIL_MODE.md)
 - [LIVE_COUNCIL_MODE.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\LIVE_COUNCIL_MODE.md)
+- [DEBATE_COUNCIL_MODE.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\DEBATE_COUNCIL_MODE.md)
 - [config/personas.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\config\personas.yaml)
 - [config/participants.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\config\participants.yaml)
 - [config/transcript-style.yaml](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\config\transcript-style.yaml)
@@ -121,6 +124,7 @@ Gemini などの一般的なチャットで使うときは [CHAT_QUICKSTART.md](
 - [templates/transcript.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\transcript.md)
 - [templates/character-live-transcript.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\character-live-transcript.md)
 - [templates/teaching-transcript.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\teaching-transcript.md)
+- [templates/debate-transcript.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\debate-transcript.md)
 - [templates/summary.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\summary.md)
 - [templates/report.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\templates\report.md)
 - [samples/README.md](C:\Users\akira_hamasaki\Projects\AI-Meeting-Framework\samples\README.md)

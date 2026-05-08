@@ -54,3 +54,30 @@ meeting_modes:
       - "after_round_0"
       - "after_round_1"
       - "before_final_decision"
+
+  Debate Council Mode:
+    description: "複数AIが相互反論、再反論、立場修正を行い、合意点と対立点を明確にする"
+    final_decider: "configurable"
+    human_input: true
+    allowed_outputs:
+      - "debate_transcript"
+      - "summary"
+      - "report"
+      - "meeting_note"
+      - "decision_memo"
+      - "action_list"
+    round_based: true
+    default_rounds: 3
+    min_rounds: 3
+    max_rounds: 5
+    phases:
+      - "opening"
+      - "cross_response"
+      - "revision"
+      - "convergence"
+      - "decision"
+    must_escalate_when:
+      - "3ラウンドで収束しない"
+      - "重要判断で合意できない"
+      - "前提事実が不足している"
+      - "人間の価値判断が必要"

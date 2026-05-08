@@ -1,0 +1,49 @@
+version: 1
+
+council:
+  name: "debate-council"
+  mode: "Debate Council Mode"
+  description: "相互反論と立場修正を前提にした議論用 council"
+
+  participants:
+    moderator:
+      participant_id: "moderator"
+    members:
+      - participant_id: "analyst"
+      - participant_id: "advocate"
+      - participant_id: "critic"
+    human:
+      participant_id: "human"
+
+  final_decider: "human"
+
+  outputs:
+    debate_transcript: true
+    summary: true
+    report: true
+    decision_memo: true
+    action_list: true
+
+  round_rules:
+    default_rounds: 3
+    max_rounds: 5
+    opening_round: true
+    cross_response_round: true
+    revision_round: true
+    convergence_round: true
+    decision_round: true
+
+  debate_rules:
+    - "相手の発言に反応するときは、反応対象を明示する"
+    - "妥当な反論を受けた場合は、自分の見解を修正してよい"
+    - "初期立場を守ることを目的にしない"
+    - "勝敗ではなく、結論の質を上げることを目的にする"
+    - "3ラウンドで収束しなければ、人間判断へ渡す"
+
+  required_final_sections:
+    - "合意点"
+    - "対立点"
+    - "修正された見解"
+    - "人間判断が必要な点"
+    - "最終結論"
+
